@@ -1,0 +1,44 @@
+<?php
+include ('dbconnection.php');
+$Cquery="select * from spec";
+$Cresult = $conn->query($Cquery);
+
+
+ ?>
+
+
+
+<! DOCTYPE html>
+<html>
+<head>
+
+
+<title>Untitled Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="form/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="form/css/fontawesome.min.css"/>
+<link rel="stylesheet" href="form/css/all.css"/>
+<link rel="stylesheet" href="form/css/form.css"
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri">
+
+
+</head>
+
+<body>
+
+
+
+  <h2 align="right" style="color:DodgerBlue;">  أختر طبيبك</h2>
+
+     <p align="right"  style="color:MediumSeaGreen;">الأن يمكنك أختيار التخصص الذي تريده. ثم تختار الطبيب الذي تريد العلاج معه.</p>
+     <select class="form-control specselect" name="spec" >
+           <option > </option>
+          <?php
+             while($row = mysqli_fetch_array($Cresult)) {
+                 echo '<option value="'.$row['id'].'">'.$row['name']."</option>";}
+             ?>
+     </select>
+
+
+</body>
+</html>

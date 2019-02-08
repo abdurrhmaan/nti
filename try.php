@@ -2,11 +2,11 @@
 session_start();
 ?>
 <?php
-        //include ('dbconnection.php');
+      /*  include ('dbconnection.php');
         //select clinics from Database
         $Cquery="select * from spec";
         $Cresult = $conn->query($Cquery);
-
+*/
 
 ?>
 
